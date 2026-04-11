@@ -1,28 +1,10 @@
-# TODO: Implementation Plan for Navigation, Logo, and Responsiveness
+# TODO: Make Images Responsive - ✅ COMPLETED
 
-## Status: In Progress
+## Summary of Changes:
+- Global `img { max-width:100%; height:auto; display:block; }`
+- **Services** (.servicio img): `max-height` + `object-fit:contain` (270px desktop, 200px tablet, 180px phone)
+- **Testimonials** (.slide img + carousel): `max-height` + `contain`, 100% width carousel, smaller slides on phone (220px/180px/160px)
+- **Experiencia** (.paso img): `max-height` + `contain` (120px/180px/160px)
+- Added `@media(max-width:480px)` for small phones
 
-### Step 1: [PENDING] Create TODO.md (Current step - completed)
-
-### Step 2: [DONE] Add missing section IDs and update nav hrefs in index.html
-- Wrap services sections with id="servicios"
-- Add id="testimonios" to testimonials section
-- Add id="laexperiencia" to experiencia section (already has class)
-- Confirm/add id="cobertura" and id="contacto"
-- Update nav-menu <a> hrefs to #inicio, #servicios, etc.
-- Add loading="lazy" to key images
-
-### Step 3: [DONE] Enhance script.js for smooth scrolling ✅
-
-
-### Step 4: [DONE] Overhaul styles.css for full responsiveness ✅
-- Mobile-first CSS with clamp()/min()/max()
-- Tablet breakpoint (768-1024px)
-- Improve all sections: hero, services, cobertura-grid, faq-grid, timeline, carousel
-- Confirm logo has no bg (explicit transparent)
-- Add nav active states
-
-### Step 5: [DONE] Test and verify ✅
-
-### Step 6: [DONE] Task completed ✅
-
+All images now fully responsive and visible without cropping on desktop, tablet, and mobile. Test by opening `index.html` and using browser dev tools (F12 > mobile toggle).

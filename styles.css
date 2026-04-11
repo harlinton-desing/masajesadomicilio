@@ -14,6 +14,12 @@ padding:0;
 box-sizing:border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body{
 font-family:'Poppins', sans-serif;
 background:var(--vino);
@@ -229,11 +235,12 @@ transform:translateY(-5px);
 }
 
 .servicio img{
-width:150px;
-height:270px;
-object-fit:cover;
-border-radius:10px;
-margin:10px;
+	width:150px;
+	max-height:270px;
+	height:auto;
+	object-fit:contain;
+	border-radius:10px;
+	margin:10px;
 }
 
 .contenido{
@@ -359,57 +366,59 @@ color:var(--dorado);
 @media(max-width:768px){
 
 .nav-menu{
-position:absolute;
-top:80px;
-left:0;
-width:100%;
-background:var(--vino);
-flex-direction:column;
-display:none;
-padding:20px 0;
+	position:absolute;
+	top:80px;
+	left:0;
+	width:100%;
+	background:var(--vino);
+	flex-direction:column;
+	display:none;
+	padding:20px 0;
 }
 
 .nav-menu.active{
-display:flex;
+	display:flex;
 }
 
 .menu-toggle{
-display:flex;
+	display:flex;
 }
 
 .hero{
-height:70vh;
+	height:70vh;
 }
 
 .hero-text h1{
-font-size:26px;
+	font-size:26px;
 }
 
 .jennifer{
-flex-direction:column;
-text-align:center;
+	flex-direction:column;
+	text-align:center;
 }
 
 .jennifer img{
-width:100%;
+	width:100%;
 }
 
 .servicio{
-flex-direction:column;
+	flex-direction:column;
 }
 
 .servicio img{
-width:100%;
-height:200px;
+	width:100%;
+	max-height:200px;
+	height:auto;
+	object-fit:contain;
 }
 
 .cols{
-flex-direction:column;
+	flex-direction:column;
 }
 
 .footer-container{
-grid-template-columns:1fr;
-text-align:center;
+	grid-template-columns:1fr;
+	text-align:center;
 }
 
 }
@@ -454,10 +463,11 @@ transform:translateY(-5px);
 
 /* IMAGEN */
 .paso img{
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:10px;
+	width:120px;
+	max-height:120px;
+	height:auto;
+	object-fit:contain;
+	border-radius:10px;
 }
 
 /* TEXTO */
@@ -491,18 +501,20 @@ font-size:12px;
 @media(max-width:768px){
 
 .paso{
-flex-direction:column;
-text-align:center;
+	flex-direction:column;
+	text-align:center;
 }
 
 .paso img{
-width:100%;
-height:180px;
+	width:100%;
+	max-height:180px;
+	height:auto;
+	object-fit:contain;
 }
 
 .paso .tiempo{
-position:static;
-margin-top:10px;
+	position:static;
+	margin-top:10px;
 }
 
 }
@@ -743,10 +755,10 @@ margin-bottom:30px;
 
 /* CARRUSEL */
 .carousel{
-position:relative;
-overflow:hidden;
-max-width:1000px;
-margin:auto;
+	position:relative;
+	overflow:hidden;
+	max-width:100%;
+	margin:0 auto;
 }
 
 .carousel-track{
@@ -762,10 +774,11 @@ transition:0.4s;
 }
 
 .slide img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:15px;
+	width:100%;
+	max-height:220px;
+	height:auto;
+	object-fit:contain;
+	border-radius:15px;
 }
 
 /* EFECTO PROFUNDIDAD */
@@ -824,13 +837,30 @@ background:#f6b373;
 @media(max-width:768px){
 
 .slide{
-min-width:250px;
+	min-width:250px;
 }
 
 .slide img{
-height:180px;
+	max-height:180px;
+	height:auto;
+	object-fit:contain;
 }
 
+}
+
+@media(max-width:480px){
+	.slide {
+		min-width:220px;
+	}
+	.slide img {
+		max-height:160px !important;
+	}
+	.servicio img {
+		max-height:180px !important;
+	}
+	.paso img {
+		max-height:160px !important;
+	}
 }
 
 /* HERO AJUSTADO 🔥 */
