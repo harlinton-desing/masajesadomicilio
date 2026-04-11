@@ -235,12 +235,11 @@ transform:translateY(-5px);
 }
 
 .servicio img{
-	width:150px;
-	max-height:270px;
-	height:auto;
-	object-fit:contain;
-	border-radius:10px;
-	margin:10px;
+	width:160px;
+	height:280px;
+	object-fit:cover;
+	border-radius:10px 0 0 10px;
+	margin:0;
 }
 
 .contenido{
@@ -403,13 +402,13 @@ color:var(--dorado);
 
 .servicio{
 	flex-direction:column;
+	overflow:visible;
 }
 
 .servicio img{
 	width:100%;
-	max-height:200px;
-	height:auto;
-	object-fit:contain;
+	height:240px;
+	object-fit:cover;
 }
 
 .cols{
