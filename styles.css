@@ -51,13 +51,33 @@ padding:6px 20px;
 font-size:13px;
 }
 
-/* NAVBAR */
+/* =========================
+NAVBAR PROFESIONAL CON FONDO 🔥
+========================= */
+
 .navbar{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-z-index:999;
+z-index:1000;
+
+/* 🔥 FONDO SIEMPRE ACTIVO */
+background:#7c2643;
+
+/* EFECTO PREMIUM */
+background:linear-gradient(
+rgba(124,38,67,0.95),
+rgba(124,38,67,0.95)
+);
+
+backdrop-filter:blur(8px);
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+
 transition:0.3s;
+}
+.hero{
+margin-top:70px;
 }
 
 .navbar.scrolled{
@@ -85,7 +105,7 @@ transition:0.3s;
 
 /* EFECTO AL SCROLL */
 .navbar.scrolled .logo{
-height:55px;
+height:45px;
 }
 
 /* MENU */
@@ -222,12 +242,12 @@ color:var(--dorado);
 .servicio{
 display:flex;
 background:#8e2c4c;
-border:2px solid var(--dorado);
+border:5px solid var(--dorado);
 border-radius:15px;
 margin-bottom:25px;
 position:relative;
 overflow:hidden;
-transition:0.3s;
+transition:0.5s;
 }
 
 .servicio:hover{
@@ -235,15 +255,17 @@ transform:translateY(-5px);
 }
 
 .servicio img{
-	width:160px;
-	height:280px;
+	width:280px;
+	height:440px;
+	border-radius:15px;
 	object-fit:cover;
+	object-position:center top;
 	border-radius:10px 0 0 10px;
 	margin:0;
 }
 
 .contenido{
-padding:10px;
+padding:6px;
 }
 
 .tiempo{
@@ -283,27 +305,63 @@ justify-content:center;
 color:white;
 }
 
-/* TESTIMONIOS */
-.slider{
+
+/* TESTIMONIOS 🔥 */
+.carousel{
 overflow:hidden;
+max-width:2200px;
+margin:auto;
 }
 
-.slides{
+.carousel-track{
 display:flex;
+gap:20px;
+transition:transform 0.5s ease;
+}
+
+/* 🔥 SLIDE */
+.slide{
+min-width:880px; /* mismo tamaño */
+display:flex;
+justify-content:center;
+}
+
+/* 🔥 IMAGEN EXACTA */
+.slide img{
+width:280px;
+height:280px;
+object-fit:cover; /* llena sin deformar */
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+/* EFECTO HOVER */
+.slide img:hover{
+transform:scale(1.05);
+}
+
+/* EFECTO ACTIVO */
+.slide.active img{
+transform:scale(1.08);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.carousel-track{
 gap:15px;
-animation:scroll 25s linear infinite;
 }
 
-.slides img{
+.slide{
+min-width:280px;
+}
+
+.slide img{
 width:260px;
-height:180px;
-object-fit:cover;
-border-radius:12px;
+height:260px;
 }
 
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
 }
 
 /* EXPERIENCIA */
@@ -366,13 +424,15 @@ color:var(--dorado);
 
 .nav-menu{
 	position:absolute;
-	top:80px;
+	top:70px;
 	left:0;
 	width:100%;
-	background:var(--vino);
+	background:rgba(124,38,67,0.98);
 	flex-direction:column;
 	display:none;
-	padding:20px 0;
+	padding:30px 20px;
+	border-radius:0 0 20px 20px;
+	box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
 .nav-menu.active{
@@ -381,6 +441,17 @@ color:var(--dorado);
 
 .menu-toggle{
 	display:flex;
+}
+
+/* ANIMACIÓN HAMBURGUESA */
+.menu-toggle.active span:nth-child(1){
+	transform:rotate(45deg) translate(6px,6px);
+}
+.menu-toggle.active span:nth-child(2){
+	opacity:0;
+}
+.menu-toggle.active span:nth-child(3){
+	transform:rotate(-45deg) translate(6px,-6px);
 }
 
 .hero{
@@ -407,8 +478,9 @@ color:var(--dorado);
 
 .servicio img{
 	width:100%;
-	height:240px;
+	height:280px;
 	object-fit:cover;
+	object-position:center top;
 }
 
 .cols{
@@ -767,28 +839,34 @@ transition:transform 0.5s ease;
 
 /* SLIDES MÁS GRANDES 🔥 */
 .slide{
-min-width:320px;
-margin:0 10px;
+min-width:400px;
+margin:0 15px;
 transition:0.4s;
 }
 
 .slide img{
 	width:100%;
-	max-height:220px;
+	max-height:350px;
 	height:auto;
-	object-fit:contain;
-	border-radius:15px;
+	object-fit:cover;
+	object-position:center;
+	border-radius:25px;
+	box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+	border: 4px solid rgba(246,179,115,0.4);
+	transition: all 0.4s ease;
 }
 
 /* EFECTO PROFUNDIDAD */
 .slide{
-opacity:0.6;
-transform:scale(0.9);
+opacity:1;
+transform:scale(0.98);
+filter: brightness(1.05) contrast(1.1);
 }
 
 .slide.active{
 opacity:1;
-transform:scale(1);
+transform:scale(1.05);
+box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 /* FLECHAS */
@@ -836,26 +914,28 @@ background:#f6b373;
 @media(max-width:768px){
 
 .slide{
-	min-width:250px;
+	min-width:350px;
 }
 
 .slide img{
-	max-height:180px;
+	max-height:300px;
 	height:auto;
-	object-fit:contain;
+	object-fit:cover;
+	object-position:center;
 }
 
 }
 
 @media(max-width:480px){
 	.slide {
-		min-width:220px;
+		min-width:300px;
 	}
 	.slide img {
-		max-height:160px !important;
+		max-height:250px !important;
 	}
 	.servicio img {
-		max-height:180px !important;
+		max-height:280px !important;
+		object-position: center top !important;
 	}
 	.paso img {
 		max-height:160px !important;
@@ -962,9 +1042,20 @@ box-shadow:0 5px 20px rgba(0,0,0,0.3);
 max-width:1100px;
 margin:auto;
 display:flex;
-justify-content:flex-end; /* 🔥 sin logo */
+justify-content:space-between;
 align-items:center;
 padding:15px 20px;
+}
+
+.logo-container {
+display:flex;
+align-items:center;
+}
+
+.logo{
+height:50px;
+width:auto;
+object-fit:contain;
 }
 
 /* MENÚ */
@@ -1015,22 +1106,6 @@ transition:0.3s;
 .btn-nav:hover{
 background:#1ebe5d;
 transform:scale(1.05);
-}
-
-/* HAMBURGUESA */
-.menu-toggle{
-display:none;
-flex-direction:column;
-cursor:pointer;
-z-index:1000;
-}
-
-.menu-toggle span{
-height:3px;
-width:25px;
-background:white;
-margin:10px 0;
-transition:0.3s;
 }
 
 /* ANIMACIÓN ICONO */
