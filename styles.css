@@ -7,6 +7,10 @@
 --navbar-height: 80px;
 }
 
+.nav-menu {
+  transition: all 0.4s ease;
+}
+
 /* Mobile-first base */
 *{
 margin:0;
