@@ -1657,3 +1657,87 @@ MODAL TEAM 🔥
   background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
   pointer-events: none;
 }
+
+/* =========================
+FONDO DIFUMINADO TEAM 🔥
+========================= */
+
+.team-section{
+  position: relative;
+  padding: 0px 0px;
+  overflow: hidden;
+}
+
+/* IMAGEN DE FONDO */
+.team-section::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('imagenes/equipo\ de\ trabajo.jpeg') center/cover no-repeat;
+  filter: blur(0px); /* 🔥 DIFUMINADO */
+  
+}
+
+/* CAPA OSCURA PARA LEGIBILIDAD */
+.team-section::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(223,215,228,0.6);
+  z-index: 1;
+}
+
+/* CONTENIDO ENCIMA */
+.team-section .container{
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+GALERÍA BACKGROUND PRO 🔥
+========================= */
+
+.gallery-pro{
+  position: relative;
+  padding: 90px 20px;
+  overflow: hidden;
+}
+
+/* IMAGEN DE FONDO */
+.gallery-pro::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('imagenes/galeria.jpeg'); /* 🔥 CAMBIA ESTA IMAGEN */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(8px) brightness(0.8);
+  transform: scale(1.15);
+
+  z-index: 0;
+}
+
+/* CAPA PARA LEGIBILIDAD */
+.gallery-pro::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(423,215,228,0.6);
+  z-index: 1;
+}
+
+/* CONTENIDO ENCIMA */
+.gallery-pro .container{
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px){
+  .gallery-pro::before{
+    background-position: center top;
+    transform: scale(1.2);
+  }
+}
